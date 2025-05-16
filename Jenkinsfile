@@ -14,7 +14,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git url: 'git@github.com:your-org/nginx-deploy.git'
+                git url: 'https://github.com/your-org/nginx-deploy.git'
             }
         }
 
