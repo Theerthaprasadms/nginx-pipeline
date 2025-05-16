@@ -7,7 +7,7 @@ RUN apt-get update && \
 
 COPY index.html /var/www/html/index.html
 
-EXPOSE 8889
+EXPOSE 80
 
 CMD ["nginx", "-g", "daemon off;"]
 
