@@ -8,7 +8,7 @@ pipeline {
     environment {
         IMAGE_NAME = "nginx-${params.ENV}"
         ECR_REPO = "your_ecr_repo_url/${IMAGE_NAME}"
-        PORT = "8889"
+        PORT = "80"
     }
 
     stages {
