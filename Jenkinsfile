@@ -14,7 +14,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git credentialsId: 'nginx-deploy-creds', url: 'https://github.com/Theerthaprasadms/nginx-deploy.git'
+                git credentialsId: 'nginx-deploy-creds', url: 'https://github.com/Theerthaprasadms/nginx-pipeline.git'
             }
         }
 
