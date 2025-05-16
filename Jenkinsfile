@@ -14,7 +14,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git url: 'https://github.com/your-org/nginx-deploy.git'
+                git credentialsId: 'nginx-deploy-creds', url: 'https://github.com/Theerthaprasadms/nginx-deploy.git'
             }
         }
 
@@ -36,7 +36,7 @@ pipeline {
             steps {
                 script {
                     sh """
-                    aws ecr get-login-password --region <region> | docker login --username AWS --password-stdin <your_aws_account_id>.dkr.ecr.<region>.amazonaws.com
+                    aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 774305596656.dkr.ecr.ap-south-1.amazonaws.com
                     docker build -t ${IMAGE_NAME} .
                     docker tag ${IMAGE_NAME} ${ECR_REPO}
                     docker push ${ECR_REPO}
